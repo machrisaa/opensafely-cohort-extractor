@@ -10,6 +10,9 @@ Implemented functions:
 'registered_practice_as_of'
 'with_these_clinical_events'
 
+Documentation of all functions:
+https://docs.opensafely.org/study-def-variables/#cohortextractor.patients.with_these_clinical_events
+
 """
 
 import datetime
