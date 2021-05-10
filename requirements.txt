@@ -54,7 +54,7 @@ idna==2.9
     # via requests
 isort==5.7.0
     # via -r requirements.in
-kiwisolver==1.2.0
+kiwisolver
     # via matplotlib
 lz4==3.1.3
     # via opensafely-cohort-extractor
@@ -79,7 +79,7 @@ opensafely-jobrunner==2.1.6
     # via opensafely-cohort-extractor
 packaging==20.4
     # via pytest
-pandas==1.0.1
+pandas
     # via
     #   opensafely-cohort-extractor
     #   seaborn

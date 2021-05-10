@@ -107,16 +107,31 @@ class StudyDefinition:
 
     @staticmethod
     def get_backend_for_database_url(database_url):
-        if database_url.startswith("mssql://") or database_url.startswith(
-            "mssql+pyodbc://"
-        ):
+        # FIXME: change to way to identify the backend
+        # if database_url.startswith("mssql://") or database_url.startswith(
+        #     "mssql+pyodbc://"
+        # ):
+        #     from .tpp_backend import TPPBackend
+        #
+        #     return TPPBackend
+        # elif database_url.startswith("presto://"):
+        #     from .emis_backend import EMISBackend
+        #
+        #     return EMISBackend
+    
+        backend = os.environ.get('OPENSAFELY_BACKEND', default=None)
+        if backend == 'tpp':
             from .tpp_backend import TPPBackend
-
+        
             return TPPBackend
-        elif database_url.startswith("presto://"):
+        elif backend == 'emis':
             from .emis_backend import EMISBackend
-
+        
             return EMISBackend
+        elif backend == 'graphnet':
+            from .graphnet_backend import GraphnetBackend
+        
+            return GraphnetBackend
         else:
             raise ValueError(f"No matching backend found for {database_url}")
 

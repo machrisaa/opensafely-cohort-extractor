@@ -7,3 +7,6 @@ outputs/*
 .idea
 opensafely_cohort_extractor.egg-info/
 pip-wheel-metadata
+workdir
+workspace
+private-*
